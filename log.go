@@ -1,4 +1,4 @@
-package log
+package log // import "go.nownabe.dev/log"
 
 import "go.uber.org/zap"
 
