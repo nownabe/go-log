@@ -1,4 +1,4 @@
-module github.com/nownabe/go-log
+module go.nownabe.dev/go
 
 require (
 	github.com/pkg/errors v0.8.1 // indirect
