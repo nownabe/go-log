@@ -1,5 +1,7 @@
 package log
 
+import "fmt"
+
 // Level is a logging priority.
 // Higher levels are more important.
 type Level int
@@ -30,5 +32,7 @@ func (l Level) String() string {
 		return "warn"
 	case LevelError:
 		return "error"
+	default:
+		return fmt.Sprintf("level(%d)", l)
 	}
 }
