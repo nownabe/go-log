@@ -24,6 +24,10 @@ var (
 	// The variadic key-value pairs are treated as they are in With.
 	Errorw wfunc
 
+	// Panicw logs a message with some additional context,
+	// then panics. The variadic key-value pairs are treated as they are in With.
+	Panicw wfunc
+
 	// Sync flushes any buffered log entries.
 	Sync func() error
 )
@@ -51,6 +55,7 @@ func Init(development bool) {
 	Infow = sugar.Infow
 	Warnw = sugar.Warnw
 	Errorw = sugar.Errorw
+	Panicw = sugar.Panicw
 	Sync = sugar.Sync
 }
 
