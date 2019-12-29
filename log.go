@@ -6,7 +6,8 @@ type wfunc func(string, ...interface{})
 
 var (
 	logger *zap.Logger
-	sugar  *zap.SugaredLogger
+
+	Logger *zap.SugaredLogger
 
 	// Debugw logs a message with some additional context.
 	// The variadic key-value pairs are treated as they are in With.
@@ -49,14 +50,14 @@ func Init(development bool) {
 		panic(err)
 	}
 
-	sugar = logger.Sugar()
+	Logger = logger.Sugar()
 
-	Debugw = sugar.Debugw
-	Infow = sugar.Infow
-	Warnw = sugar.Warnw
-	Errorw = sugar.Errorw
-	Panicw = sugar.Panicw
-	Sync = sugar.Sync
+	Debugw = Logger.Debugw
+	Infow = Logger.Infow
+	Warnw = Logger.Warnw
+	Errorw = Logger.Errorw
+	Panicw = Logger.Panicw
+	Sync = Logger.Sync
 }
 
 // Logw logs a message as specified log level.
